@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+                    <style>
+                        button[type=button] {
+                            background-color: slategray;
+                            border: none;
+                            color: white;
+                            padding: 3px 44px;
+                            text-decoration: none;
+                            margin: 1px 2px;
+                            cursor: pointer;
+                        }
+                        button[type=button]:hover{
+                            background-color: rgb(41, 13, 221);
+                        }
+                        input[type=radio] {
+                            background-color: slategray;
+                            border: none;
+                            color: white;
+                            padding: 3px 44px;
+                            text-decoration: none;
+                            margin: 1px 2px;
+                            cursor: pointer;
+                        } 
+                        input[id='ax']:hover{
+                            background-color: rgb(178, 182, 186);
+                        }
+                        input[id='ay']:hover{
+                            background-color: rgb(178, 182, 186);
+                        }
+                        input[id='ax'] {
+                            width: 20%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            box-sizing: border-box;
+                            border: 1px solid #555;
+                            outline: none;
+                            text-align: center;
+                            font-size: large;
+                            
+                        }
+                        input[id='ax']:focus {
+                        background-color: rgb(225, 239, 244);
+                        }
+                        input[id='ay'] {
+                            width: 20%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            box-sizing: border-box;
+                            border: 1px solid #555;
+                            outline: none;
+                            text-align: center;
+                            font-size: large;
+                            
+                        }
+                        input[id='ay']:focus {
+                        background-color: rgb(225, 239, 244);
+                        }
+                        
+                    </style>
+</head>
+<body style="text-align: center; ">
+    <div style="background-color: rgb(15, 239, 239); width: auto; border: 40px solid aqua;"><br>
+    <h4>Calculator</h4><hr >
+     <br><label for="ax" style="color: rgb(54, 42, 165);">Please Enter First Number :</label><br>   
+     <input  id="ax"  >
+     <form >
+        
+             
+         <br><input type="radio" value="+" id="af" name="ca" >
+            <label for="af" style="border: 6px solid aqua; cursor: pointer; " ><strong style="font-size: 200%; ">+</strong ><sub>(addition)</sub></label>
+        <br><br><input type="radio" value="-" id="sf" name="ca">
+            <label for="sf" style="border: 6px solid aqua; cursor: pointer;" ><strong style="font-size: 200%;">--</strong><sub>(subraction)</sub></label>
+        <br><br><input type="radio" value="*" id="mf" name="ca">
+            <label for="mf" style="border: 6px solid aqua; cursor: pointer;"><strong style="font-size: 200%;">*</strong><sub>(multiplication)</sub></label>
+        <br><br><input type="radio" value="/" id="df" name="ca">
+            <label for="df" style="border: 6px solid aqua; cursor: pointer;"><strong style="font-size: 200%;">/</strong><sub>(division)</sub></label><br>
+        <br><br><input type="radio" value="/" id="rf" name="ca">
+            <label for="rf" style="border: 6px solid aqua; cursor: pointer;"><strong style="font-size: 150%;">%</strong><sub>(remainder)</sub></label><br><br>
+          
+      
+    </form>
+    <br><label for="ay" style="color: rgb(65, 42, 165);">Please Enter Second Number :</label><br>
+     <input  id="ay"  ><hr>
+    <button type="button" onclick="cal()"><h4>=</h4></button>
+    <!--
+    <button type="button" onclick="sub()">sub</button>
+    <button type="button" onclick="mul()">Mul</button>
+    <hr>
+    
+    <input  id="sq" value="1">-
+     <input  id="sw" value="2" >
+    
+    <hr>
+    <input  id="me" value="1">*
+     <input  id="mr" value="2" >
+    -->
+    <br><p id="demo"><strong ></strong> </p>
+    <br></div>
+    <script>
+        function cal(x,y)
+            {
+                var a,s,m,d,r,av,sv,mv,dv,rv;
+                x= Number(document.getElementById('ax').value);
+                    if (x == "") 
+                            {
+                                alert("please enter the first number");
+                                exit;
+                            }
+                y=Number(document.getElementById('ay').value);
+                    if (y== "") 
+                        {
+                                alert("please enter the second number");
+                                exit;      
+                        }
+                if (document.getElementById('af').checked) 
+                    {
+                        av = document.getElementById('af').value;
+                        a=x+y;
+                        document.getElementById('demo').innerHTML= a;
+                    }
+                if (document.getElementById('sf').checked) 
+                    {
+                        sv = document.getElementById('sf').value;
+                        s=x-y;
+                        document.getElementById('demo').innerHTML= s;
+                    }
+                if (document.getElementById('mf').checked) 
+                    {
+                        mv = document.getElementById('mf').value;
+                        m=x*y;
+                        document.getElementById('demo').innerHTML= m;
+                    }
+                if (document.getElementById('df').checked) 
+                    {
+                        dv= document.getElementById('df').value;
+                        d=x/y;
+                        document.getElementById('demo').innerHTML= d;
+                    }
+                if (document.getElementById('rf').checked) 
+                    {
+                        rv = document.getElementById('rf').value;
+                        r=x%y;
+                        document.getElementById('demo').innerHTML= r;
+                    }
+
+
+                    
+                //d=document.getElementById('sf').value;
+                //e=document.getElementById('mf').value;
+
+          /*
+                if (c=+){
+               a= x + y;
+               document.getElementById('demo').innerHTML= a;}
+               else if (d='-'){
+                   b=x-y;
+                document.getElementById('demo').innerHTML= b;
+               }
+               else
+               {
+                   m=x*y;
+                   document.getElementById('demo').innerHTML= m;
+
+               }
+            */
+        }
+     </script>
+
+    <!--
+     <script>
+        function sub(q,w)
+            {
+                var s;
+                q= Number(document.getElementById('sq').value);
+                w=Number(document.getElementById('sw').value);
+               s= q-w
+               document.getElementById('demo').innerHTML= s;
+            }
+     </script>
+      <script>
+        function mul(e,r)
+            {
+                var m;
+                e= Number(document.getElementById('me').value);
+                r=Number(document.getElementById('mr').value);
+               m= e*r
+               document.getElementById('demo').innerHTML= m;
+            }
+        </script>
+-->
+     
+</body>
+</html>
